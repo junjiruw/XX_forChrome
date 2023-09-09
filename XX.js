@@ -25,12 +25,17 @@ window.addEventListener('load', function(){
 
 document.addEventListener('keydown', function (e) {//ショートカットとかいう機能が誤爆しまくるので無効化したぜ！
     if(!キー入力の許可){
-        //アクティブウィンドウを見て、入力欄にいるならキー入力を許可しよう
-        if(document.activeElement.role!="textbox"){
-            e.preventDefault();
-            //キー入力によっておきる特殊な動作を阻止することができる。→じゃあショートカット全部無効化できるじゃーん
-            //てか Ctrl + C　すら死ぬぞ
-            //ただし入力自体はちゃんと通る…？いや、これ日本語入力が変態的だから通るだけだな
+        if(document.activeElement.role!="textbox" && document.activeElement.role!="combobox"){
+            //アクティブウィンドウを見て、入力欄 or 検索欄 にいるならキー入力を許可しよう
+            if(!e.ctrlKey){
+                //まあctrl押してたら有効にするか…
+                
+                e.preventDefault();
+                //キー入力によっておきる特殊な動作を阻止することができる。→じゃあショートカット全部無効化できるじゃーん
+                //てか Ctrl + C　すら死ぬぞ
+                //ただし入力自体はちゃんと通る…？いや、これ日本語入力が変態的だから通るだけだな
+            }
+
         }
     }
 });

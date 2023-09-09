@@ -1,5 +1,6 @@
 # XX_forChrome
 ![拡張機能のアイコンだよ](/icons/icon_128.png "XX_forChrome")
+
 Xを公式で開くとすげえことになってるので、少しずつ改善したいね。というわけで拡張機能を作ってみよう！
 
 <strong>⚠どこの誰が作ったんだかわかんねえ拡張機能を<em>install</em>するのはやめとけ⚠ </strong>

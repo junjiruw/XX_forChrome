@@ -4,7 +4,7 @@
     "name": "XX_forChrome",
     "version": "0.0.1",
 
-    "/推奨/":"以下は推奨項目 actionはアイコンをクリックしたときの動作を定義。",
+    "/その他/":"actionはアイコンをクリックしたときの動作を定義。permissionsで権限とか使用API。content_scriptsでサイトを指定、適用するファイルも指定 backgroundはどのサイトでも動いてるかわいいやつさ！",
     "action": {
         "default_icon": "icons/icon_16.png"
     },
@@ -15,13 +15,15 @@
         "48": "icons/icon_48.png",
         "128": "icons/icon_128.png"
     },
-
-    "/オプション/":"content_scriptsでサイトを指定、適用するファイルも指定",
+    "permissions": ["tabs","contextMenus"],
     "content_scripts": [
         {
             "matches": ["https://twitter.com/*"],
             "css": ["XX.css"],"js": ["XX.js"]
         }
-    ]
+    ],
+    "background": {
+        "service_worker": "background.js"
+    }
 
   }

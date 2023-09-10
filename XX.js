@@ -1,7 +1,8 @@
 let キー入力の許可=true;
 
+
 function DM出現判定(){
-    let DM親 = document.getElementById("layers").firstElementChild.firstElementChild.firstElementChild.firstElementChild;
+    let DM親 = document.getElementById("layers").firstElementChild.firstElementChild.firstElementChild.firstElementChild;//これもう少しマシな取得方法あったんじゃ…
     return DM親.classList.contains("r-5wli1b");
     //DMの頭が出てればこいつがTRUE。それすらないとFALSE。あと、そもそもページが細すぎると要素がないのでこれもFALSEだが、知らん！
     //ただ、この判定法は万能ではないっぽい（出ててもFALSEのことがある。知らん！）
@@ -75,4 +76,13 @@ document.addEventListener('keydown', function (e) {//ショートカットとか
 
         }
     }
+});
+
+chrome.runtime.onMessage.addListener(function(request,sender,res) {//background.jsからメッセージを受け取れる。
+    //Xで共有したい文字列を入力した状態でページリロードする
+    window.location.href = request;
+
+    //これさあ、入力箇所に直接文字入れてあげるだけでよかったんじゃないのお？
+        //　↑　1.入力箇所の取得がめんどい
+        //2.見た目の変化がすくなすぎてなんかわかりにくい
 });

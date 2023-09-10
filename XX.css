@@ -2,3 +2,13 @@ body{
     background: rgb(2, 52, 71) !important;
 }
 
+#DM_Button{
+    position:absolute;
+    right: 15px;  
+    bottom: 10px;  
+
+    background: #267cb6;
+    color: #ffffff;
+    border:solid #ffffff;
+    font-size:large;
+}

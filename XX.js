@@ -2,7 +2,7 @@ let キー入力の許可=true;
 
 
 function DM出現判定(){
-    let DM親 = document.getElementById("layers").firstElementChild.firstElementChild.firstElementChild.firstElementChild;//これもう少しマシな取得方法あったんじゃ…
+    let DM親 = document.querySelector('[data-testid="DMDrawer"]');
     return DM親.classList.contains("r-5wli1b");
     //DMの頭が出てればこいつがTRUE。それすらないとFALSE。あと、そもそもページが細すぎると要素がないのでこれもFALSEだが、知らん！
     //ただ、この判定法は万能ではないっぽい（出ててもFALSEのことがある。知らん！）
@@ -10,7 +10,7 @@ function DM出現判定(){
 
 window.addEventListener('load', function(){
 
-    //ロード終わったら2秒後に操作するように予約しておく
+    //ロード終わったら3秒後に操作するように予約しておく
     setTimeout(function(){
         //DMの表示を自動で行う
         //まあこれめっちゃ失敗するんだけど（笑）
@@ -56,9 +56,6 @@ window.addEventListener('load', function(){
             }
         },1000);
     },3000);
-
-
-
 });
 
 document.addEventListener('keydown', function (e) {//ショートカットとかいう機能が誤爆しまくるので無効化したぜ！

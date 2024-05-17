@@ -2,7 +2,7 @@
     "/必須/":"以下は必須項目 manifest_versionは3。",
     "manifest_version": 3,
     "name": "XX_forChrome",
-    "version": "0.1",
+    "version": "1.0",
 
     "/その他/":"actionはアイコンをクリックしたときの動作を定義。permissionsで権限とか使用API。content_scriptsでサイトを指定、適用するファイルも指定 backgroundはどのサイトでも動いてるかわいいやつさ！",
     "action": {
@@ -18,11 +18,11 @@
     "permissions": ["tabs","contextMenus"],
     "content_scripts": [
         {
-            "matches": ["https://twitter.com/*"],
+            "matches": ["https://twitter.com/*","https://x.com/*"],
             "css": ["XX.css"],"js": ["XX.js"]
         },
         {
-            "matches": ["https://twitter.com/home"],
+            "matches": ["https://twitter.com/home","https://x.com/home"],
             "js": ["XX_home.js"]
         }
     ],

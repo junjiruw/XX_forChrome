@@ -60,8 +60,8 @@ window.addEventListener('load', function(){
 
 document.addEventListener('keydown', function (e) {//ショートカットとかいう機能が誤爆しまくるので無効化したぜ！
     if(!キー入力の許可){
-        if(document.activeElement.role!="textbox" && document.activeElement.role!="combobox"){
-            //アクティブウィンドウを見て、入力欄 or 検索欄 にいるならキー入力を許可しよう
+        if(document.activeElement.role!="textbox" && document.activeElement.role!="combobox" && document.activeElement.tagName.toLowerCase() !== "textarea" ){
+            //アクティブウィンドウを見て、入力欄 or 検索欄 にいるならキー入力を許可しよう …あとGrokの入力欄がrole入ってないからコレも追加します…
             if(!e.ctrlKey){
                 //まあctrl押してたら有効にするか…
                 
